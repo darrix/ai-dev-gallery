@@ -36,7 +36,7 @@ internal sealed partial class GenerateCode : BaseSamplePage
     private IChatClient? chatClient;
     private CancellationTokenSource? cts;
 
-    public ObservableCollection<string> LanguageStrings { get; } = ["C#", "C++", "Java", "Python", "JavaScript", "TypeScript"];
+    public ObservableCollection<string> LanguageStrings { get; } = ["C#", "C++", "F#", "Java", "Python", "JavaScript", "TypeScript"];
     private string _currentLanguage = "C#";
     private string _currentCode = string.Empty;
     private bool _leadingMarkdownParsed;
@@ -186,6 +186,7 @@ internal sealed partial class GenerateCode : BaseSamplePage
     private readonly Dictionary<string, ILanguage> languageDict = new()
     {
         { "C#", Languages.CSharp },
+        { "F#", Languages.FSharp },
         { "C++", Languages.Cpp },
         { "Java", Languages.Java },
         { "Python", Languages.Python },
